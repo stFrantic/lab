@@ -6,18 +6,15 @@ public class Apple extends Food {
     public Apple(String size) throws Exception {
         super("Яблоко");
         this.size = size;
-        if(size == "большое") { return;
-        }else if (size == "среднее") {
+        if(size.equals("большое")) { return;
+        }else if (size.equals("среднее")) {
             return;
-        }else if(size == "маленькое") {
+        }else if(size.equals("маленькое")) {
             return;
-        } else
-        {
+        } else{
             throw new Exception("Такого размера не существует");
         }
     }
-
-
     @Override
     public void consume() {
         System.out.println(this + "съедено");
