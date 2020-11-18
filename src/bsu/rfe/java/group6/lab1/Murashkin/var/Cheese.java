@@ -12,4 +12,5 @@ public class Cheese extends Food {
     public double calculateCalories() {
         return 200.0;
     }
+
 }

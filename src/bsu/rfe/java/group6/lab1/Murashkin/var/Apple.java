@@ -6,35 +6,42 @@ public class Apple extends Food {
     public Apple(String size) throws Exception {
         super("Яблоко");
         this.size = size;
-        if(size.equals("большое")) { return;
-        }else if (size.equals("среднее")) {
+        if (size.equals("большое")) {
             return;
-        }else if(size.equals("маленькое")) {
+        } else if (size.equals("среднее")) {
             return;
-        } else{
+        } else if (size.equals("маленькое")) {
+            return;
+        } else {
             throw new Exception("Такого размера не существует");
         }
     }
+
+    public String getSize() {
+        return size;
+    }
+
     @Override
     public void consume() {
         System.out.println(this + "съедено");
     }
 
     @Override
-    public double calculateCalories()  {
-        if(size.equals( "большое")) { return 100;
-            }else if (size.equals("среднее")) {
+    public double calculateCalories() {
+        if (size.equals("большое")) {
+            return 100;
+        } else if (size.equals("среднее")) {
             return 50;
-                }else if(size.equals("маленькое")) {
+        } else if (size.equals("маленькое")) {
             return 10;
         } else return 0;
     }
-
-    public String getParam() {
-        return size;
-    }
-
-    public void setParam(String param) {
-        this.size = param;
+    @Override
+    public boolean equals (Object ob1)
+    {
+        if(super.equals(ob1)) {
+            if (!(ob1 instanceof Beef))  return false;
+            return size.equals(((Apple) ob1).size);
+        }else return false;
     }
 }

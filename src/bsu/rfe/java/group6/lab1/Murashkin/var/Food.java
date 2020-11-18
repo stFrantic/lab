@@ -11,12 +11,12 @@ public abstract class Food implements Consumable,Nutritious {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     @Override
     public String toString() {
         return name;
+    }
+    public boolean equals (Object ob1){
+        if (ob1 instanceof Food)  return true;
+        else return false;
     }
 }
