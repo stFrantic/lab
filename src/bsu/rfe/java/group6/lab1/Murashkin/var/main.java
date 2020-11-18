@@ -25,13 +25,14 @@ public class main {
                         System.out.println(item.toString()); } else { break; }
                 }
             }else if (parts[0].equals("-calories"))
-            { int calories = 0;
-             for (Food m : menu)
+            { double calories = 0;
+             for (Food m : menu){
+             if(m!=null)
              {
                  calories+=m.calculateCalories();
-             }
+             }else break; }
                 System.out.println("Общая каллорийная ценность = " + calories);
-            }
+           }
             alredyIn++;
         }
     }

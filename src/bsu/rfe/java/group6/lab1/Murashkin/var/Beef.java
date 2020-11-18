@@ -21,9 +21,9 @@ public class Beef extends Food   {
 
     @Override
     public double calculateCalories() {
-        if (this.type == "с кровью"){ return 1000.0;}
-        else if(this.type == "норма") { return 1500.0;}
-        else if (this.type == "прожаренное"){return 2000.0;}else return 0;
+        if (this.type.equals("с кровью")){ return 1000.0;}
+        else if(this.type.equals("норма")) { return 1500.0;}
+        else if (this.type.equals("прожаренное")){return 2000.0;}else return 0;
     }
     @Override
     public boolean equals (Object ob1)

@@ -22,10 +22,10 @@ public class Apple extends Food {
 
     @Override
     public double calculateCalories()  {
-        if(size == "большое") { return 100;
-            }else if (size == "среднее") {
+        if(size.equals( "большое")) { return 100;
+            }else if (size.equals("среднее")) {
             return 50;
-                }else if(size == "маленькое") {
+                }else if(size.equals("маленькое")) {
             return 10;
         } else return 0;
     }
