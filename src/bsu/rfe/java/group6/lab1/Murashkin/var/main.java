@@ -36,17 +36,17 @@ public class main {
             }
         }
         System.out.println("Всего в завтраке");
-        int[] amount = new int[6];
+        int[] amount = new int[7];
         for (Food item : menu) {
             if (item.getName().equals("Сыр")) {
                 amount[0]++;
             }
             if (item.getName().equals("Яблоко")) {
                 Apple a = (Apple) item;
-                if (a.getSize().equals("Большое")) {
+                if (a.getSize().equals("большое")) {
                     amount[1]++;
-                }
-                amount[2]++;
+                }else if(a.getSize().equals("среднее")) amount[6]++;
+                else amount[2]++;
             }
             if (item.getName().equals("Мясо")) {
                 Beef a = (Beef) item;
@@ -56,6 +56,7 @@ public class main {
             }
             if (amount[0] != 0) System.out.println("Всего сыра: " + amount[0]);
             if (amount[1] != 0) System.out.println("Всего больших яблок: " + amount[1]);
+            if (amount[6] != 0) System.out.println("Всего средних яблок: " + amount[6]);
             if (amount[2] != 0) System.out.println("Всего маленьких яблок: " + amount[2]);
             if (amount[3] != 0) System.out.println("Всего мяса с кровью: " + amount[3]);
             if (amount[4] != 0) System.out.println("Всего мяса нормальной прожарки: " + amount[4]);
